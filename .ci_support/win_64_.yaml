@@ -6,7 +6,11 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2019
+libpq:
+- '15'
 perl:
 - 5.32.1
+postgresql:
+- '15'
 target_platform:
 - win-64
