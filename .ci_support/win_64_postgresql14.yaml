@@ -8,5 +8,7 @@ cxx_compiler:
 - vs2019
 perl:
 - 5.32.1
+postgresql:
+- '14'
 target_platform:
 - win-64
