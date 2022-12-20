@@ -1,4 +1,4 @@
-From 7f10dd7377fb5ce911880c12eefe7d7e1f792517 Mon Sep 17 00:00:00 2001
+From b0fa5de9e658d9db39461c6187452665039d9c2d Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 1 Dec 2022 17:12:23 -0800
 Subject: [PATCH] Add CMake build
@@ -20,7 +20,7 @@ Subject: [PATCH] Add CMake build
 
 diff --git CMakeLists.txt CMakeLists.txt
 new file mode 100644
-index 0000000..2896f77
+index 0000000..e15e6a6
 --- /dev/null
 +++ CMakeLists.txt
 @@ -0,0 +1,147 @@
@@ -109,7 +109,7 @@ index 0000000..2896f77
 +if (MSVC)
 +
 +    #set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
-+    add_compile_options(/O3)
++    add_compile_options(/O2 /fp:fast)
 +
 +    else()
 +    add_compile_options(-ftree-vectorize -fassociative-math -fno-signed-zeros -fno-trapping-math)
@@ -576,5 +576,5 @@ index c884fa5..4a0d862 100644
  SELECT * FROM t2 ORDER BY val;
  
 -- 
-2.38.0
+2.38.1
 
