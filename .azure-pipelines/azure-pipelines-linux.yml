@@ -8,12 +8,12 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_postgresql14:
-        CONFIG: linux_64_postgresql14
+      linux_64_libpq14:
+        CONFIG: linux_64_libpq14
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_postgresql15:
-        CONFIG: linux_64_postgresql15
+      linux_64_libpq15:
+        CONFIG: linux_64_libpq15
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
   timeoutInMinutes: 360

@@ -8,11 +8,11 @@ jobs:
     vmImage: macOS-11
   strategy:
     matrix:
-      osx_64_postgresql14:
-        CONFIG: osx_64_postgresql14
+      osx_64_libpq14:
+        CONFIG: osx_64_libpq14
         UPLOAD_PACKAGES: 'True'
-      osx_64_postgresql15:
-        CONFIG: osx_64_postgresql15
+      osx_64_libpq15:
+        CONFIG: osx_64_libpq15
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
