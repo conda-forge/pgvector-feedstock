@@ -1,0 +1,32 @@
+From 8c99be06ff5ae8b2118e5152ea0252c60fb8215b Mon Sep 17 00:00:00 2001
+From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
+Date: Wed, 11 Jan 2023 20:21:58 -0800
+Subject: [PATCH] Remove native arch for cross-compilation
+
+---
+ Makefile | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 3a350d4..f756082 100644
+--- a/Makefile
++++ b/Makefile
+@@ -9,14 +9,7 @@ TESTS = $(wildcard test/sql/*.sql)
+ REGRESS = $(patsubst test/sql/%.sql,%,$(TESTS))
+ REGRESS_OPTS = --inputdir=test --load-extension=vector
+ 
+-OPTFLAGS = -march=native
+-
+-# Mac ARM doesn't support -march=native
+-ifeq ($(shell uname -s), Darwin)
+-	ifeq ($(shell uname -p), arm)
+-		OPTFLAGS =
+-	endif
+-endif
++OPTFLAGS =
+ 
+ # For auto-vectorization:
+ # - GCC (needs -ftree-vectorize OR -O3) - https://gcc.gnu.org/projects/tree-ssa/vectorization.html
+-- 
+2.38.1
+
