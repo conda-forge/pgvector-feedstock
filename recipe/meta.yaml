@@ -1,5 +1,5 @@
 {% set name = "pgvector" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 3c7c174c8731884599fd9abc5bd3533f48c8e0860c6a1b9cb06713d244d64511
-  patches:
-    - patches/0001-Add-CMake-build.patch
+  sha256: b76cf84ddad452cc880a6c8c661d137ddd8679c000a16332f4f03ecf6e10bcc8
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -20,9 +18,9 @@ requirements:
     - {{ compiler('cxx') }}
     - perl
     - gnuconfig       # [unix]
+    - postgresql      # [build_platform != target_platform]
+    - libpq           # [build_platform != target_platform]
     - make            # [unix]
-    - cmake           # [win]
-    - ninja           # [win]
     - m2-patch        # [win]
     - m2-diffutils    # [win]
     - posix           # [win]
