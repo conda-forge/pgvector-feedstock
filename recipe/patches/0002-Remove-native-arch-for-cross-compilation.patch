@@ -1,14 +1,14 @@
-From 8c99be06ff5ae8b2118e5152ea0252c60fb8215b Mon Sep 17 00:00:00 2001
+From ce9a2f67cbe161a8fc1a8671ae736dc886feb66f Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Wed, 11 Jan 2023 20:21:58 -0800
 Subject: [PATCH] Remove native arch for cross-compilation
 
 ---
- Makefile | 9 +--------
- 1 file changed, 1 insertion(+), 8 deletions(-)
+ Makefile | 12 +-----------
+ 1 file changed, 1 insertion(+), 11 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 3a350d4..f756082 100644
+index 3a350d4..5a9bfa5 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -9,14 +9,7 @@ TESTS = $(wildcard test/sql/*.sql)
@@ -27,6 +27,16 @@ index 3a350d4..f756082 100644
  
  # For auto-vectorization:
  # - GCC (needs -ftree-vectorize OR -O3) - https://gcc.gnu.org/projects/tree-ssa/vectorization.html
+@@ -36,9 +29,6 @@ sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
+ 
+ EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
+ 
+-PG_CONFIG ?= pg_config
+-PGXS := $(shell $(PG_CONFIG) --pgxs)
+-include $(PGXS)
+ 
+ # for Mac
+ ifeq ($(PROVE),)
 -- 
 2.38.1
 

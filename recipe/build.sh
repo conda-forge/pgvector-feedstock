@@ -4,6 +4,8 @@ set -ex
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
+export PGROOT="${PREFIX}"
+
 make
 make install
 
