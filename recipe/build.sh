@@ -6,11 +6,17 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
-  ./configure --prefix=$PREFIX
 fi
 
 make
-make install
+
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
+  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d '$PREFIX/lib'
+  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d '$PREFIX/share/extension'
+  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d '$PREFIX/share/extension'
+else
+  make install
+fi
 
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
