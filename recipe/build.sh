@@ -11,11 +11,10 @@ fi
 make
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d "${PREFIX}/lib"
-  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d "${PREFIX}/share/extension"
-  /bin/sh $PREFIX/lib/pgxs/src/makefiles/../../config/install-sh -c -d "${PREFIX}/share/extension"
+  /usr/bin/install -c -m 755 vector.so "${PREFIX}/lib/vector.so"
+  /usr/bin/install -c -m 644 vector.control "${PREFIX}/share/extension/"
+  /usr/bin/install -c -m 644 sql/* "${PREFIX}/share/extension/"
   ls
-  ls sql/
   ls $PREFIX/share/extension
   ls $BUILD_PREFIX/share/extension
 else
