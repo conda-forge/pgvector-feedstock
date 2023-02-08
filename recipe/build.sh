@@ -17,6 +17,10 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
 else
   make install
 fi
+ls
+ls sql/
+ls $PREFIX/share/extension
+ls $BUILD_PREFIX/share/extension
 
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
