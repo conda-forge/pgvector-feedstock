@@ -4,6 +4,6 @@ github:
 conda_forge_output_validation: true
 build_platform:
   osx_arm64: osx_64
-test: native_and_emulated
+test_on_native_only: false
 conda_build:
   pkg_format: '2'
