@@ -4,6 +4,9 @@ set -ex
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION}" != "1" ]]; then
+  export PGROOT="${PREFIX}"
+fi
 
 make
 make install
