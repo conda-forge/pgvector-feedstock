@@ -8,6 +8,8 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
 fi
 
+./configure
+
 make OPTFLAGS="${CFLAGS}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
