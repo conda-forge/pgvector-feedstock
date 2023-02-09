@@ -8,7 +8,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
 fi
 
-make
+make OPTFLAGS="${CFLAGS}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   # Manually installing files because pgvector does auto-detection of install directory using pgxs in $BUILD_PREFIX

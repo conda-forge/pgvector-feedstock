@@ -4,11 +4,17 @@ set "LIBRARY_PREFIX=%LIBRARY_PREFIX:\=/%"
 set "PGROOT=%LIBRARY_PREFIX%"
 
 nmake /NOLOGO /F Makefile.win
+if errorlevel 1 exit 1
 nmake /NOLOGO /F Makefile.win install
+if errorlevel 1 exit 1
 
 
 initdb -D test_db
-pg_ctl -D test_db -l test.log -o "-F -p 5434" start
-createuser --username=%USERNAME% -w --port=5434 -s postgres
+if errorlevel 1 exit 1
+pg_ctl -D test_db -l test.log start
+if errorlevel 1 exit 1
+createuser --username=%USERNAME% -w -s postgres
+if errorlevel 1 exit 1
 nmake /NOLOGO /F Makefile.win installcheck
+if errorlevel 1 exit 1
 pg_ctl -D test_db stop
