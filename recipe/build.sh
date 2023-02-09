@@ -6,7 +6,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
-  export CFLAGS="${CFLAGS} -arch arm64"
+  export CFLAGS="${CFLAGS} -arch arm64 -mmacosx-version-min=11.0"
 fi
 
 
