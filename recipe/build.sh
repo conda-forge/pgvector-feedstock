@@ -6,7 +6,6 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
-  else
 fi
 
 
