@@ -6,14 +6,10 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PGROOT="${PREFIX}"
-  echo $MAKEFLAGS
-  echo $CFLAGS
-  ls
-  export CFLAGS="${CFLAGS} -arch arm64 -mmacosx-version-min=11.0"
 fi
 
 
-make OPTFLAGS="${CFLAGS}" CC="${CC}"
+make OPTFLAGS="${CFLAGS}" CC="${CC_FOR_BUILD} --target=${target_platform}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   # Manually installing files because pgvector does auto-detection of install directory using pgxs in $BUILD_PREFIX
