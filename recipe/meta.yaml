@@ -9,7 +9,7 @@ source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: b76cf84ddad452cc880a6c8c661d137ddd8679c000a16332f4f03ecf6e10bcc8
   patches:
-    - patches/0002-CMakeLists.patch  # build_platform != target_platform]
+    - patches/0002-CMakeLists.patch  # [build_platform != target_platform]
 
 build:
   number: 3
@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - perl
     - gnuconfig       # [unix]
     - postgresql      # [build_platform != target_platform]

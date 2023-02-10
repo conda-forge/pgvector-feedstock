@@ -7,15 +7,10 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  export PGROOT="${PREFIX}"
   mkdir build
   pushd build
 
-  cmake -GNinja ${CMAKE_ARGS} \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-      -DCMAKE_PREFIX_PATH="${BUILD_PREFIX}" \
-      ..
+  cmake ${CMAKE_ARGS} ..
 
 
   cmake --build . --verbose --config Release -- -v -j ${CPU_COUNT}
