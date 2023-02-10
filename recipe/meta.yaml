@@ -17,7 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - perl
+    - perl            # [build_platform == target_platform]
     - gnuconfig       # [unix]
     - postgresql      # [build_platform != target_platform]
     - libpq           # [build_platform != target_platform]
