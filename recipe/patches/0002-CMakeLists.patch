@@ -1,13 +1,13 @@
-From b91fd8e27c814a9666913a94827e5e81c7312a3c Mon Sep 17 00:00:00 2001
+From ccc0fc75e6804e70c4d0c25fbe819782361c302d Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 9 Feb 2023 15:53:35 -0800
 Subject: [PATCH] CMakeLists
 
 ---
  CMakeLists.txt     | 37 +++++++++++++++++++++++++++++++++++++
- Makefile           |  2 +-
+ Makefile           |  4 ++--
  src/CMakeLists.txt | 31 +++++++++++++++++++++++++++++++
- 3 files changed, 69 insertions(+), 1 deletion(-)
+ 3 files changed, 70 insertions(+), 2 deletions(-)
  create mode 100644 CMakeLists.txt
  create mode 100644 src/CMakeLists.txt
 
@@ -56,9 +56,18 @@ index 0000000..245ea87
 +INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/sql/ DESTINATION ${CMAKE_PREFIX_PATH}/share/extension)
 \ No newline at end of file
 diff --git Makefile Makefile
-index 3a350d4..a251905 100644
+index 3a350d4..f9d0243 100644
 --- Makefile
 +++ Makefile
+@@ -9,7 +9,7 @@ TESTS = $(wildcard test/sql/*.sql)
+ REGRESS = $(patsubst test/sql/%.sql,%,$(TESTS))
+ REGRESS_OPTS = --inputdir=test --load-extension=vector
+ 
+-OPTFLAGS = -march=native
++OPTFLAGS =
+ 
+ # Mac ARM doesn't support -march=native
+ ifeq ($(shell uname -s), Darwin)
 @@ -37,7 +37,7 @@ sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
  EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
  
