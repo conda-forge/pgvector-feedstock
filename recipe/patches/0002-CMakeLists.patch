@@ -10,11 +10,11 @@ Subject: [PATCH] CMakeLists
  create mode 100644 CMakeLists.txt
  create mode 100644 src/CMakeLists.txt
 
-diff --git a/CMakeLists.txt b/CMakeLists.txt
+diff --git CMakeLists.txt CMakeLists.txt
 new file mode 100644
 index 0000000..e15e6a6
 --- /dev/null
-+++ b/CMakeLists.txt
++++ CMakeLists.txt
 @@ -0,0 +1,147 @@
 +
 +cmake_minimum_required(VERSION 3.20)
@@ -164,11 +164,11 @@ index 0000000..e15e6a6
 +
 +INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/sql/ DESTINATION ${CMAKE_PREFIX_PATH}/share/extension)
 \ No newline at end of file
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+diff --git src/CMakeLists.txt src/CMakeLists.txt
 new file mode 100644
 index 0000000..ab06814
 --- /dev/null
-+++ b/src/CMakeLists.txt
++++ src/CMakeLists.txt
 @@ -0,0 +1,31 @@
 +
 +
