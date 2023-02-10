@@ -1,4 +1,4 @@
-From f5f76d9a3cab8c60aefb37a09884203cb0c85881 Mon Sep 17 00:00:00 2001
+From 787b2f7dd66e78ee24efd9a7ec0f5f2aedf04b9c Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 9 Feb 2023 15:53:35 -0800
 Subject: [PATCH] CMakeLists
@@ -56,7 +56,7 @@ index 0000000..245ea87
 \ No newline at end of file
 diff --git src/CMakeLists.txt src/CMakeLists.txt
 new file mode 100644
-index 0000000..eadb831
+index 0000000..7456ab6
 --- /dev/null
 +++ src/CMakeLists.txt
 @@ -0,0 +1,31 @@
@@ -79,9 +79,9 @@ index 0000000..eadb831
 +if (MSVC)
 +target_include_directories(vector PRIVATE ${CMAKE_PREFIX_PATH}/include/server/port/win32)
 +target_include_directories(vector PRIVATE ${CMAKE_PREFIX_PATH}/include/server/port/win32_msvc)
++target_link_libraries(vector ${PostgreSQL_LIBRARIES})
 +
 +endif(MSVC)
-+target_link_libraries(vector ${PostgreSQL_LIBRARIES})
 +
 +set_target_properties(vector PROPERTIES PREFIX "")
 +
