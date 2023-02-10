@@ -13,7 +13,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   make install
 
 else
-  make
+  make DESTDIR="${PREFIX}" OPTFLAGS=""
   make install
 
   initdb -D test_db
