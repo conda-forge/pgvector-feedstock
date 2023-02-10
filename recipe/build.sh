@@ -9,14 +9,24 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
 fi
 
 
-make OPTFLAGS="${CFLAGS}" CC="${CC_FOR_BUILD} --target=${target_platform}"
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  # Manually installing files because pgvector does auto-detection of install directory using pgxs in $BUILD_PREFIX
-  /usr/bin/install -c -m 755 vector.so "${PREFIX}/lib/vector.so"
-  /usr/bin/install -c -m 644 vector.control "${PREFIX}/share/extension/"
-  /usr/bin/install -c -m 644 sql/* "${PREFIX}/share/extension/"
+  mkdir build
+  pushd build
+
+  cmake ${CMAKE_ARGS} \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
+      -DCMAKE_PREFIX_PATH="${PREFIX}" \
+      -DBUILD_SHARED_LIBS=ON \
+      ..
+
+
+  cmake --build . --verbose --config Release -- -v -j ${CPU_COUNT}
+  cmake --install . --verbose --config Release
+  popd
 else
+  make
   make install
 fi
 
