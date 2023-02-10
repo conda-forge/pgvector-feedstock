@@ -7,13 +7,13 @@
 
 case "$1" in
   --includedir)
-	echo "$PREFIX/include"
+	echo "$BUILD_PREFIX/include"
 	;;
   --pkgincludedir)
-	echo "$PREFIX/include/postgresql"
+	echo "$BUILD_PREFIX/include/postgresql"
 	;;
   --includedir-server)
-	echo "$PREFIX/include/postgresql/server"
+	echo "$BUILD_PREFIX/include/postgresql/server"
 	;;
   --libdir)
 	echo "$PREFIX/lib"
@@ -32,13 +32,13 @@ case "$1" in
 	echo "@TARGET_CC@"
 	;;
   --pkglibdir)
-	echo "/usr/lib/postgresql"
+	echo "$PREFIX/lib"
 	;;
   --bindir)
-	echo "/usr/bin"
+	echo "$PREFIX/bin"
 	;;
   --sharedir)
-	echo "/usr/share/postgresql"
+	echo "$PREFIX/share"
 	;;
   --localedir)
 	echo "/usr/share/locale"
