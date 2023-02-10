@@ -8,10 +8,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cxx_compiler:
-- clangxx
-cxx_compiler_version:
-- '14'
 libpq:
 - '15'
 macos_machine:
@@ -22,6 +18,3 @@ postgresql:
 - '15'
 target_platform:
 - osx-arm64
-zip_keys:
-- - c_compiler_version
-  - cxx_compiler_version

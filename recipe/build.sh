@@ -7,16 +7,10 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  mkdir build
-  pushd build
+  export PG_CONFIG="${BUILD_PREFIX}/bin/pg_config"
+  make CC="{CC_FOR_BUILD}"
+  make install
 
-  cmake -GNinja ${CMAKE_ARGS} ..
-
-
-  cmake --build . --verbose --config Release -- -v -j ${CPU_COUNT}
-  ls src/
-  cmake --install . --verbose --config Release
-  popd
 else
   make
   make install
