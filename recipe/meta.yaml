@@ -20,7 +20,6 @@ requirements:
     - perl            # [build_platform == target_platform]
     - gnuconfig       # [unix]
     - postgresql      # [build_platform != target_platform]
-    - libpq           # [build_platform != target_platform]
     - make            # [unix]
     - cmake           # [build_platform != target_platform]
     - ninja           # [build_platform != target_platform]
@@ -29,7 +28,6 @@ requirements:
     - posix           # [win]
   host:
     - postgresql
-    - libpq
   run:
     - libpq
     - postgresql
