@@ -14,6 +14,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
 
 
   cmake --build . --verbose --config Release -- -v -j ${CPU_COUNT}
+  ls src/
   cmake --install . --verbose --config Release
   popd
 else
