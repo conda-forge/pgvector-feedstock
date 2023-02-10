@@ -10,7 +10,7 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   mkdir build
   pushd build
 
-  cmake ${CMAKE_ARGS} ..
+  cmake -GNinja ${CMAKE_ARGS} ..
 
 
   cmake --build . --verbose --config Release -- -v -j ${CPU_COUNT}
