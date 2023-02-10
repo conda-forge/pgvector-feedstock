@@ -10,26 +10,22 @@ source:
   sha256: b76cf84ddad452cc880a6c8c661d137ddd8679c000a16332f4f03ecf6e10bcc8
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - perl
+    - perl            # [build_platform == target_platform]
     - gnuconfig       # [unix]
     - postgresql      # [build_platform != target_platform]
-    - libpq           # [build_platform != target_platform]
     - make            # [unix]
     - m2-patch        # [win]
     - m2-diffutils    # [win]
     - posix           # [win]
   host:
     - postgresql
-    - libpq
   run:
     - libpq
-    - postgresql
 
 test:
   commands:
