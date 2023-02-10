@@ -18,7 +18,6 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
       -DCMAKE_PREFIX_PATH="${PREFIX}" \
-      -DBUILD_SHARED_LIBS=ON \
       ..
 
 
