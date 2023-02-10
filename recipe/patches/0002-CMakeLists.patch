@@ -1,12 +1,13 @@
-From 787b2f7dd66e78ee24efd9a7ec0f5f2aedf04b9c Mon Sep 17 00:00:00 2001
+From b91fd8e27c814a9666913a94827e5e81c7312a3c Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 9 Feb 2023 15:53:35 -0800
 Subject: [PATCH] CMakeLists
 
 ---
  CMakeLists.txt     | 37 +++++++++++++++++++++++++++++++++++++
+ Makefile           |  2 +-
  src/CMakeLists.txt | 31 +++++++++++++++++++++++++++++++
- 2 files changed, 68 insertions(+)
+ 3 files changed, 69 insertions(+), 1 deletion(-)
  create mode 100644 CMakeLists.txt
  create mode 100644 src/CMakeLists.txt
 
@@ -54,6 +55,19 @@ index 0000000..245ea87
 +
 +INSTALL(DIRECTORY ${CMAKE_SOURCE_DIR}/sql/ DESTINATION ${CMAKE_PREFIX_PATH}/share/extension)
 \ No newline at end of file
+diff --git Makefile Makefile
+index 3a350d4..a251905 100644
+--- Makefile
++++ Makefile
+@@ -37,7 +37,7 @@ sql/$(EXTENSION)--$(EXTVERSION).sql: sql/$(EXTENSION).sql
+ EXTRA_CLEAN = sql/$(EXTENSION)--$(EXTVERSION).sql
+ 
+ PG_CONFIG ?= pg_config
+-PGXS := $(shell $(PG_CONFIG) --pgxs)
++PGXS ?= $(shell $(PG_CONFIG) --pgxs)
+ include $(PGXS)
+ 
+ # for Mac
 diff --git src/CMakeLists.txt src/CMakeLists.txt
 new file mode 100644
 index 0000000..7456ab6
@@ -92,5 +106,5 @@ index 0000000..7456ab6
 +  )
 +
 -- 
-2.25.1
+2.38.1
 

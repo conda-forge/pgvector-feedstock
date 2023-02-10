@@ -8,7 +8,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PG_CONFIG="${BUILD_PREFIX}/bin/pg_config"
-  export PGXS=$($PREFIX/bin/pg_config --pgxs)
+  export PGXS="${PREFIX}/lib/pgxs/src/makefiles/pgxs.mk"
   make
   make install
 
