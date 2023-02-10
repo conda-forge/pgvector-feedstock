@@ -7,7 +7,8 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
-  export PGXS="${PREFIX}/lib/pgxs/src/makefiles/pgxs.mk"
+  chmod +x arm64_pg_config
+  export PG_CONFIG="${RECIPE_DIR}/arm64_pg_config"
   make DESTDIR="${PREFIX}"
   make install
 
