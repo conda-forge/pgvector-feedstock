@@ -8,7 +8,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
 if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
   export PG_CONFIG="${PREFIX}/bin/pg_config"
-  make CC="${CC_FOR_BUILD}"
+  make CC="${CC}"
   make install
 
 else
