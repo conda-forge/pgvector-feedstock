@@ -1,4 +1,4 @@
-From ca5973c8e258e5c8c88d5663ef21a5d033d5e844 Mon Sep 17 00:00:00 2001
+From 46a7d204eadd6703ba8c25ae5f8332656d110934 Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 9 Feb 2023 15:53:35 -0800
 Subject: [PATCH] CMakeLists
@@ -12,7 +12,7 @@ Subject: [PATCH] CMakeLists
 
 diff --git CMakeLists.txt CMakeLists.txt
 new file mode 100644
-index 0000000..a36f0df
+index 0000000..697480b
 --- /dev/null
 +++ CMakeLists.txt
 @@ -0,0 +1,37 @@
@@ -46,7 +46,7 @@ index 0000000..a36f0df
 +configure_file(${EXT_CONTROL_FILE} ${EXT_CONTROL_FILE})
 +install(
 +        FILES ${CMAKE_CURRENT_BINARY_DIR}/${EXT_CONTROL_FILE}
-+        DESTINATION "${PG_SHAREDIR}/extension")
++        DESTINATION ${CMAKE_PREFIX_PATH}/share/extension)
 +INSTALL(
 +    FILES ${CMAKE_SOURCE_DIR}/sql/${PROJECT_NAME}.sql 
 +    DESTINATION ${CMAKE_PREFIX_PATH}/share/extension

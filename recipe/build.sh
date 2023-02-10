@@ -13,8 +13,6 @@ if [[ "${CONDA_BUILD_CROSS_COMPILATION}" == "1" ]]; then
 
   cmake -GNinja ${CMAKE_ARGS} \
       -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-      -DCMAKE_PREFIX_PATH="${PREFIX}" \
       ..
 
 
