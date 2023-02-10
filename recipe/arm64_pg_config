@@ -10,10 +10,10 @@ case "$1" in
 	echo "$BUILD_PREFIX/include"
 	;;
   --pkgincludedir)
-	echo "$BUILD_PREFIX/include/postgresql"
+	echo "$BUILD_PREFIX/include"
 	;;
   --includedir-server)
-	echo "$BUILD_PREFIX/include/postgresql/server"
+	echo "$BUILD_PREFIX/include/server"
 	;;
   --libdir)
 	echo "$PREFIX/lib"
