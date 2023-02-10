@@ -1,4 +1,4 @@
-From 46a7d204eadd6703ba8c25ae5f8332656d110934 Mon Sep 17 00:00:00 2001
+From 7e13f2b346be55c175d738f0714beb05e1d00326 Mon Sep 17 00:00:00 2001
 From: Michael McAuliffe <michael.e.mcauliffe@gmail.com>
 Date: Thu, 9 Feb 2023 15:53:35 -0800
 Subject: [PATCH] CMakeLists
@@ -12,12 +12,12 @@ Subject: [PATCH] CMakeLists
 
 diff --git CMakeLists.txt CMakeLists.txt
 new file mode 100644
-index 0000000..697480b
+index 0000000..245ea87
 --- /dev/null
 +++ CMakeLists.txt
 @@ -0,0 +1,37 @@
 +
-+cmake_minimum_required(VERSION 3.20)
++cmake_minimum_required(VERSION 3.18)
 +set(PROJECT_NAME vector)
 +set(PROEJCT_VERSION "0.4.0")
 +project(${PROJECT_NAME} VERSION ${PROEJCT_VERSION} LANGUAGES C)
