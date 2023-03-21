@@ -1,5 +1,5 @@
 {% set name = "pgvector" %}
-{% set version = "0.4.0" %}
+{% set version = "0.4.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b76cf84ddad452cc880a6c8c661d137ddd8679c000a16332f4f03ecf6e10bcc8
+  sha256: 12dc08c33165a2f14d97d1c153d6ec3dc0c8d1b8c53ac3ba8b44517e8795444c
 
 build:
-  number: 3
+  number: 0
 
 requirements:
   build:
@@ -29,12 +29,12 @@ requirements:
 
 test:
   commands:
-      - test -f $PREFIX/lib/vector.so                                                   # [unix]
-      - test -f $PREFIX/share/extension/vector--{{ version }}.sql                       # [unix]
-      - test -f $PREFIX/share/extension/vector.control                                  # [unix]
-      - if not exist %LIBRARY_LIB%\vector.dll exit 1                                    # [win]
-      - if not exist %LIBRARY_PREFIX%\share\extension\vector--{{ version }}.sql exit 1  # [win]
-      - if not exist %LIBRARY_PREFIX%\share\extension\vector.control exit 1             # [win]
+    - test -f $PREFIX/lib/vector.so                                                     # [unix]
+    - test -f $PREFIX/share/extension/vector--{{ version }}.sql                         # [unix]
+    - test -f $PREFIX/share/extension/vector.control                                    # [unix]
+    - if not exist %LIBRARY_LIB%\vector.dll exit 1                                      # [win]
+    - if not exist %LIBRARY_PREFIX%\share\extension\vector--{{ version }}.sql exit 1    # [win]
+    - if not exist %LIBRARY_PREFIX%\share\extension\vector.control exit 1               # [win]
 
 
 about:
