@@ -4,8 +4,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-libpq:
-- '15'
 perl:
 - 5.32.1
 postgresql:

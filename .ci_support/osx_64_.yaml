@@ -8,8 +8,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-libpq:
-- '15'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 perl:

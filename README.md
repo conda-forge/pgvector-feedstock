@@ -1,11 +1,11 @@
-About pgvector
-==============
+About pgvector-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pgvector-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/pgvector/pgvector
 
 Package license: PostgreSQL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pgvector-feedstock/blob/main/LICENSE.txt)
 
 Summary: Open-source vector similarity search for Postgres.
 
