@@ -7,3 +7,5 @@ build_platform:
 test_on_native_only: false
 conda_build:
   pkg_format: '2'
+bot:
+  automerge: true
