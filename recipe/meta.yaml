@@ -29,7 +29,8 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/vector.so                                                     # [unix]
+    - test -f $PREFIX/lib/vector.so                                                     # [linux]
+    - test -f $PREFIX/lib/vector.dylib                                                  # [osx]
     - test -f $PREFIX/share/extension/vector--{{ version }}.sql                         # [unix]
     - test -f $PREFIX/share/extension/vector.control                                    # [unix]
     - if not exist %LIBRARY_LIB%\vector.dll exit 1                                      # [win]
