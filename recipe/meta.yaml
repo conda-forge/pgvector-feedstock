@@ -1,5 +1,5 @@
 {% set name = "pgvector" %}
-{% set version = "0.6.2" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: a11cc249a9f3f3d7b13069a1696f2915ac28991a72d7ba4e2bcfdceddbaeae49
+  sha256: 1b5503a35c265408b6eb282621c5e1e75f7801afc04eecb950796cfee2e3d1d8
 
 build:
   number: 0
@@ -15,6 +15,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - perl            # [build_platform == target_platform]
     - gnuconfig       # [unix]
     - postgresql      # [build_platform != target_platform]
