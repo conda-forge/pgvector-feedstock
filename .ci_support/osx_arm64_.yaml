@@ -5,7 +5,7 @@ MACOSX_SDK_VERSION:
 c_compiler:
 - clang
 c_compiler_version:
-- '16'
+- '17'
 c_stdlib:
 - macosx_deployment_target
 c_stdlib_version:
@@ -19,6 +19,6 @@ macos_machine:
 perl:
 - 5.32.1
 postgresql:
-- '16'
+- '17'
 target_platform:
 - osx-arm64
