@@ -26,7 +26,7 @@ requirements:
   host:
     - postgresql
   run:
-    - libpq
+    - postgresql
 
 test:
   commands:
