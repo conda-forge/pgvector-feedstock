@@ -24,9 +24,11 @@ requirements:
     - m2-diffutils    # [win]
     - posix           # [win]
   host:
-    - postgresql
+    - postgresql < 17 # [win]
+    - postgresql      # [not win]
   run:
-    - libpq
+    - libpq < 17      # [win]
+    - libpq           # [not win]
 
 test:
   commands:
