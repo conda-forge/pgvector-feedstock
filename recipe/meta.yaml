@@ -28,8 +28,8 @@ requirements:
     - postgresql <17  # [win]
     - postgresql      # [not win]
   run:
-    - pin_compatible('libpq', max_pin='x.x.x') }}       # [win]
-    - libpq                                             # [not win]
+    - {{ pin_compatible('libpq', max_pin='x.x.x') }}        # [win]
+    - libpq                                                 # [not win]
 
 test:
   commands:
