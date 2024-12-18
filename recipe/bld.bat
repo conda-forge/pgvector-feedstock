@@ -15,6 +15,7 @@ pg_ctl -D test_db -l test.log start
 if errorlevel 1 exit 1
 createuser --username=%USERNAME% -w -s postgres
 if errorlevel 1 exit 1
+mkdir results
 nmake /NOLOGO /F Makefile.win installcheck
 if errorlevel 1 exit 1
 pg_ctl -D test_db stop
