@@ -11,6 +11,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [win]
 
 requirements:
   build:
@@ -27,8 +28,8 @@ requirements:
     - postgresql <17  # [win]
     - postgresql      # [not win]
   run:
-    - libpq <17       # [win]
-    - libpq           # [not win]
+    - pin_compatible('libpq', max_pin='x.x.x') }}       # [win]
+    - libpq                                             # [not win]
 
 test:
   commands:
