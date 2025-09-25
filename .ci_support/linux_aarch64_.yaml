@@ -17,6 +17,6 @@ docker_image:
 perl:
 - 5.32.1
 postgresql:
-- '17'
+- '18'
 target_platform:
 - linux-aarch64

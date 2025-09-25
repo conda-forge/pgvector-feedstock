@@ -19,6 +19,6 @@ macos_machine:
 perl:
 - 5.32.1
 postgresql:
-- '17'
+- '18'
 target_platform:
 - osx-64
