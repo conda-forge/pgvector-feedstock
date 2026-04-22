@@ -1,5 +1,5 @@
 {% set name = "pgvector" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: a9094dfb85ccdde3cbb295f1086d4c71a20db1d26bf1d6c39f07a7d164033eb4
+  sha256: 69f4019389af05dc1c9548deb8628e62878e6e207c03907f2b8af2016472cdaa
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
