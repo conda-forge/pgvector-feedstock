@@ -1,5 +1,7 @@
 c_compiler:
 - vs2019
+c_compiler_version:
+- '2022'
 c_stdlib:
 - vs
 channel_sources:
