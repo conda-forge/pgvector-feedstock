@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 c_compiler:
 - gcc
 c_compiler_version:
@@ -15,6 +17,6 @@ docker_image:
 perl:
 - 5.32.1
 postgresql:
-- '18'
+- '19'
 target_platform:
 - linux-64
